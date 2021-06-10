@@ -6,7 +6,7 @@ stage('Build')
 {
 steps{
 echo "Building the Code.........."
-sh "/Users/khaledhasan/Desktop/Java_Github/Selenium_Tools/apache-maven-3.6.3/bin/mvn clean install"
+sh "mvn clean install"
 }
 }
 stage('Test') 
