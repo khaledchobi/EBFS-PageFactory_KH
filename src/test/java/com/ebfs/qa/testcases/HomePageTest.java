@@ -41,21 +41,21 @@ public class HomePageTest extends TestBase {
 	}
 	
 	
-	//@Test(priority = 1)
+	@Test(priority = 1, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyHomePageTitleTest(){
 		extentTestManager.getTest().log(Status.INFO, "Verify Home Page Title");
 		String homePageTitle = homePage.verifyHomePageTitle();
 		Assert.assertEquals(homePageTitle, HomePageTestProperties.EXP_HOMEPAGE_TITLE);
 	}
 	
-	//@Test(priority = 2)
+	@Test(priority = 2, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyLogoTest(){
 		//1.1. BruteForce the power of choice..... Logo should be visible to all users.
 		extentTestManager.getTest().log(Status.INFO, "Verify Logo in the Home Page");
 		Assert.assertTrue(homePage.verifyLogoDisplayed());
 	}
 
-	//@Test(priority = 3)
+	@Test(priority = 3, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyNavigateWomenLinkTest(){
 		// 1.2. There will be 4 options present to the user in Home page to navigate to different sections. Women, Dresses, T-Shirts, BruteForce.
 		extentTestManager.getTest().log(Status.INFO, "Verify navigate to different sections. Women, Dresses, T-Shirts, BruteForce in the Home Page");
@@ -71,7 +71,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 4)
+	@Test(priority = 4, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyNavigateDressLinkTest(){
 		// 1.2. There will be 4 options present to the user in Home page to navigate to different sections. Women, Dresses, T-Shirts, BruteForce.
 
@@ -81,7 +81,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 5)
+	@Test(priority = 5, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyNavigateTshirtsLinkTest(){ //
 		// 1.2. There will be 4 options present to the user in Home page to navigate to different sections. Women, Dresses, T-Shirts, BruteForce.
 
@@ -91,7 +91,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 6)
+	@Test(priority = 6, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyNavigateBruteForceLinkTest(){
 		// 1.2. There will be 4 options present to the user in Home page to navigate to different sections. Women, Dresses, T-Shirts, BruteForce.
 
@@ -101,7 +101,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 7)
+	@Test(priority = 7, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyFeatureProductsVisibleTest(){
 		// 1.4. Featured Products should be visible to Users
 
@@ -122,7 +122,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 9, groups = {"SmokeTest"})
+	@Test(priority = 9, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyQuickViewLinkTest() throws InterruptedException {
 		// 1.6. User should be able to view the product details layer by clicking quick view Link.
 
@@ -157,7 +157,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 10, groups = {"SmokeTest"})
+	@Test(priority = 10, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyProductWishListTest() throws InterruptedException {
 		// 1.7. User should be able to add the product to wish list from product details layer.
 		extentTestManager.getTest().log(Status.INFO, "Verify Product can added to wish list from product details layer in the Home Page");
@@ -207,7 +207,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 11, groups = {"SmokeTest"})
+	@Test(priority = 11, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyDetailOrderViewLinkTest() throws InterruptedException {
 		// 1.8. User should be able to view details order from My Account section.
 		extentTestManager.getTest().log(Status.INFO, "Verify to view details order from My Account section in the Home Page");
@@ -246,7 +246,7 @@ public class HomePageTest extends TestBase {
 
 	}
 	
-	@Test(priority = 12, groups = {"SmokeTest"})
+	@Test(priority = 12, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyContactUsLinkTest(){
 		// 1.9. Contact Us Link should be presented to the user.
 		extentTestManager.getTest().log(Status.INFO, "Verify Contact Us Link in the Home Page");
@@ -254,7 +254,7 @@ public class HomePageTest extends TestBase {
 		Assert.assertTrue(contactsPage.verifyContactsLabel());
 	}
 
-	@Test(priority = 13, groups = {"SmokeTest"})
+	@Test(priority = 13, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyBestSellerLinkTest() throws InterruptedException {
 		// 1.1.1. User should be able to filter result using popular or best seller link
 		extentTestManager.getTest().log(Status.INFO, "Verify Filter result sing popular or best seller link in the Home Page");
@@ -287,12 +287,12 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 14, groups = {"SmokeTest"})
+	//@Test(priority = 14, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyNewsLetterLinkTest() throws InterruptedException {
 		// 1.1.2. User should be subscribe/unsubscribe for Upcoming newsletter.
 		extentTestManager.getTest().log(Status.INFO, "Verify Newsletter Link working in the Home Page");
 
-		String email = "khaled0119@gmail.com";
+		String email = "khaled01240@gmail.com";
 		WebElement txtBxEmail = driver.findElement(By.xpath(HomePageProperties.TXT_BOX_EMAIL_FOR_NEWSLETTER_XPATH));
 		txtBxEmail.clear();
 		txtBxEmail.sendKeys(email);
@@ -318,17 +318,17 @@ public class HomePageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 
-	@Test(priority = 14, groups = {"SmokeTest", "ReTest"})
+	@Test(priority = 14, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyNewsLetterLinkWrongTest() throws InterruptedException {
 		// 1.1.2. User should be subscribe/unsubscribe for Upcoming newsletter.
 		extentTestManager.getTest().log(Status.INFO, "Verify Newsletter Link working in the Home Page");
 
-		String email = "khaled0122@gmail.com";
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		String email = "khaled0123@gmail.com";
 		WebElement txtBxEmail = driver.findElement(By.xpath(HomePageProperties.TXT_BOX_EMAIL_FOR_NEWSLETTER_XPATH));
 		txtBxEmail.clear();
 		txtBxEmail.sendKeys(email);
 
-		Thread.sleep(3000);
 		driver.findElement(By.xpath(HomePageProperties.BTN_SUBMIT_NEWSLETTER_XPATH)).click();
 
 		try {
@@ -358,7 +358,7 @@ public class HomePageTest extends TestBase {
 		}
 	}
 
-	@Test(priority = 15, groups = {"SmokeTest"})
+	@Test(priority = 15, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifySearchBoxTest() throws InterruptedException {
 		// 1.1.3. User should be able to search for specific products by keyword.
 
@@ -374,7 +374,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 16, groups = {"SmokeTest"})
+	@Test(priority = 16, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyFollowFacebookLinkTest() throws InterruptedException {
 		// 1.1.4. User should be presented to follow us on Facebook link.
 
@@ -465,7 +465,7 @@ public class HomePageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 
-	//@Test(priority = 46, groups = {"SmokeTest" , "RegressionTest", "BAF"})
+	//@Test(priority = 46, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyRegistrationProcessWrongTest() throws InterruptedException {
 		// 1.1.5. User should be able to register by clicking Login link
 

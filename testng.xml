@@ -11,9 +11,9 @@
 		<groups>
 			<define name = "all">
 				<!--<include name = "SmokeTest"/>-->
-				<!--<include name = "FunctionalTest"/>
+				<!--<include name = "FunctionalTest"/>-->
 				<include name = "RegressionTest"/>
-				<include name = "BAF"/>-->
+				<!--<include name = "BAF"/>-->
 				<include name = "ReTest"/>
 			</define>
 			<run>
