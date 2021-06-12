@@ -34,7 +34,7 @@ public class ProductCartSummaryTest extends TestBase {
         super();
     }
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"all"})
     public void setUp() throws InterruptedException{
         initialization();
         testUtil = new TestUtil();
@@ -840,7 +840,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    //@Test(priority = 41)
+    //@Test(priority = 41, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyCreateNewAccountAfterShoppingTest() throws InterruptedException {
         // 3.6. User should be able to create a new account.
         ExtentTestManager.getTest().log(Status.INFO, "Verify User able to create a new account on the Shopping Cart Summary page");
@@ -987,7 +987,7 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifySignInButtonDisplayed());
 
         // Email Input
-        driver.findElement(By.xpath(ProductCategoryPageProperties.REGISTRATION_EMAIL_XPATH)).sendKeys("khaled2004@gmail.com");
+        driver.findElement(By.xpath(ProductCategoryPageProperties.REGISTRATION_EMAIL_XPATH)).sendKeys("khaled2005@gmail.com");
         // Create an Account Button clicked
         driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_CREATE_AN_ACCOUNT_XPATH)).click();
 
@@ -1746,7 +1746,7 @@ public class ProductCartSummaryTest extends TestBase {
 
 
 
-    @AfterMethod
+    @AfterMethod(groups = {"all"})
     public void close(){
         driver.quit();
     }

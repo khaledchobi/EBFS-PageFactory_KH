@@ -16,6 +16,7 @@ public interface HomePageProperties {
 
 	public final String REGISTRATION_EMAIL_XPATH = ("//input[@id='email_create']");
 	public final String BTN_CREATE_AN_ACCOUNT_XPATH = ("//button[@id='SubmitCreate']");
+	public final String ERR_MSG_CREATE_ACCOUNT_XPATH = ("//div[@id='create_account_error']/ol/li");
 	public final String BTN_RADIO_MALE_XPATH = ("//input[@id='id_gender1']");
 	public final String BTN_RADIO_FEMALE_XPATH = ("//input[@id='id_gender2']");
 	public final String REGISTRATION_FIRST_NAME_XPATH = ("//input[@id='customer_firstname']");
@@ -43,6 +44,7 @@ public interface HomePageProperties {
 	public final String TXT_BOX_EMAIL_FOR_NEWSLETTER_XPATH = ("//input[@id='newsletter-input']");
 	public final String BTN_SUBMIT_NEWSLETTER_XPATH = ("//button[@name='submitNewsletter']");
 	public final String NEWS_LETTER_SUCCESS_XPATH = ("//p[contains(text(),'Newsletter : You have successfully subscribed to this newsletter.')]");
+	public final String NEWS_LETTER_NON_SUCCESS_XPATH = ("//p[contains(text(),' Newsletter : This email address is already registered.')]");
 
 	public final String TXT_BOX_SEARCH_TOP_XPATH = "//input[@id='search_query_top']";
 	public final String BTN_SUBMIT_SEARCH_TOP_XPATH = ("//button[@class='btn btn-default button-search']");

@@ -2,6 +2,7 @@ package com.ebfs.qa.testcases;
 
 import com.ebfs.qa.properties.HomePageProperties;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -31,7 +32,7 @@ public class HomePageTest extends TestBase {
 		super();
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(groups = {"all"})
 	public void setUp() {
 		initialization();
 		testUtil = new TestUtil();		
@@ -110,7 +111,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 8)
+	@Test(priority = 8, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyCheckoutCartVisibleTest(){
 		// 1.5. Checkout Cart should be visible to users with Empty.
 
@@ -121,7 +122,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 9, groups = {"SmokeTest"})
 	public void verifyQuickViewLinkTest() throws InterruptedException {
 		// 1.6. User should be able to view the product details layer by clicking quick view Link.
 
@@ -151,12 +152,12 @@ public class HomePageTest extends TestBase {
 		//Assert.assertTrue(homePage.verifyMyWishListDisplayed());
 
 		driver.switchTo().parentFrame();
-		driver.findElement(By.xpath(HomePageProperties.BTN_FANCY_POPUP_XPATH));
+		driver.findElement(By.xpath(HomePageProperties.BTN_FANCY_POPUP_XPATH)).click();
 
 
 	}
 
-	//@Test(priority = 10)
+	@Test(priority = 10, groups = {"SmokeTest"})
 	public void verifyProductWishListTest() throws InterruptedException {
 		// 1.7. User should be able to add the product to wish list from product details layer.
 		extentTestManager.getTest().log(Status.INFO, "Verify Product can added to wish list from product details layer in the Home Page");
@@ -206,7 +207,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 11)
+	@Test(priority = 11, groups = {"SmokeTest"})
 	public void verifyDetailOrderViewLinkTest() throws InterruptedException {
 		// 1.8. User should be able to view details order from My Account section.
 		extentTestManager.getTest().log(Status.INFO, "Verify to view details order from My Account section in the Home Page");
@@ -245,7 +246,7 @@ public class HomePageTest extends TestBase {
 
 	}
 	
-	//@Test(priority = 12)
+	@Test(priority = 12, groups = {"SmokeTest"})
 	public void verifyContactUsLinkTest(){
 		// 1.9. Contact Us Link should be presented to the user.
 		extentTestManager.getTest().log(Status.INFO, "Verify Contact Us Link in the Home Page");
@@ -253,7 +254,7 @@ public class HomePageTest extends TestBase {
 		Assert.assertTrue(contactsPage.verifyContactsLabel());
 	}
 
-	//@Test(priority = 13)
+	@Test(priority = 13, groups = {"SmokeTest"})
 	public void verifyBestSellerLinkTest() throws InterruptedException {
 		// 1.1.1. User should be able to filter result using popular or best seller link
 		extentTestManager.getTest().log(Status.INFO, "Verify Filter result sing popular or best seller link in the Home Page");
@@ -286,12 +287,12 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 14)
+	//@Test(priority = 14, groups = {"SmokeTest"})
 	public void verifyNewsLetterLinkTest() throws InterruptedException {
 		// 1.1.2. User should be subscribe/unsubscribe for Upcoming newsletter.
 		extentTestManager.getTest().log(Status.INFO, "Verify Newsletter Link working in the Home Page");
 
-		String email = "khaled0117@gmail.com";
+		String email = "khaled0119@gmail.com";
 		WebElement txtBxEmail = driver.findElement(By.xpath(HomePageProperties.TXT_BOX_EMAIL_FOR_NEWSLETTER_XPATH));
 		txtBxEmail.clear();
 		txtBxEmail.sendKeys(email);
@@ -317,7 +318,47 @@ public class HomePageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 
-	//@Test(priority = 15)
+	@Test(priority = 14, groups = {"SmokeTest", "ReTest"})
+	public void verifyNewsLetterLinkWrongTest() throws InterruptedException {
+		// 1.1.2. User should be subscribe/unsubscribe for Upcoming newsletter.
+		extentTestManager.getTest().log(Status.INFO, "Verify Newsletter Link working in the Home Page");
+
+		String email = "khaled0122@gmail.com";
+		WebElement txtBxEmail = driver.findElement(By.xpath(HomePageProperties.TXT_BOX_EMAIL_FOR_NEWSLETTER_XPATH));
+		txtBxEmail.clear();
+		txtBxEmail.sendKeys(email);
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(HomePageProperties.BTN_SUBMIT_NEWSLETTER_XPATH)).click();
+
+		try {
+			WebElement error = driver.findElement(By.xpath(HomePageProperties.NEWS_LETTER_NON_SUCCESS_XPATH));
+
+			System.out.println(error.getText());
+			Thread.sleep(2000);
+			driver.quit();
+
+		}
+		catch (NoSuchElementException e) {
+
+			Assert.assertTrue(homePage.verifyNewsLetterSuccessDisplayed());
+
+			// Newsletter : You have successfully subscribed to this newsletter.
+
+			WebElement actual = driver.findElement(By.xpath(HomePageProperties.NEWS_LETTER_SUCCESS_XPATH));
+
+			//WebElement expected = driver.findElement(By.xpath("//p[contains(text(),' Newsletter : This email address is already registered.')]"));
+
+			if (actual.isDisplayed()) {
+				System.out.println("Pass");
+			} else {
+				System.out.println("Failed");
+			}
+			driver.quit();
+		}
+	}
+
+	@Test(priority = 15, groups = {"SmokeTest"})
 	public void verifySearchBoxTest() throws InterruptedException {
 		// 1.1.3. User should be able to search for specific products by keyword.
 
@@ -333,7 +374,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	//@Test(priority = 16)
+	@Test(priority = 16, groups = {"SmokeTest"})
 	public void verifyFollowFacebookLinkTest() throws InterruptedException {
 		// 1.1.4. User should be presented to follow us on Facebook link.
 
@@ -386,7 +427,7 @@ public class HomePageTest extends TestBase {
 	}
 
 
-	//@Test(priority = 17)
+	//@Test(priority = 17, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyRegistrationProcessTest() throws InterruptedException {
 		// 1.1.5. User should be able to register by clicking Login link
 
@@ -396,7 +437,7 @@ public class HomePageTest extends TestBase {
 		driver.findElement(By.xpath(HomePageProperties.LNK_SIGN_IN_XPATH)).click();
 
 		Assert.assertTrue(homePage.verifyCreateAccountButtonDisplayed());
-		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_EMAIL_XPATH)).sendKeys("khaledhasan010@gmail.com");
+		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_EMAIL_XPATH)).sendKeys("khaledhasan011@gmail.com");
 		driver.findElement(By.xpath(HomePageProperties.BTN_CREATE_AN_ACCOUNT_XPATH)).click();
 
 		Thread.sleep(3000);
@@ -424,11 +465,60 @@ public class HomePageTest extends TestBase {
 		Thread.sleep(3000);
 	}
 
+	//@Test(priority = 46, groups = {"SmokeTest" , "RegressionTest", "BAF"})
+	public void verifyRegistrationProcessWrongTest() throws InterruptedException {
+		// 1.1.5. User should be able to register by clicking Login link
+
+		extentTestManager.getTest().log(Status.INFO, "Verify to register by clicking Login link in the Home Page");
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(HomePageProperties.LNK_SIGN_IN_XPATH)).click();
+
+		Assert.assertTrue(homePage.verifyCreateAccountButtonDisplayed());
+		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_EMAIL_XPATH)).sendKeys("khaledhasan0101@gmail.com");
+		driver.findElement(By.xpath(HomePageProperties.BTN_CREATE_AN_ACCOUNT_XPATH)).click();
+
+		try {
+			WebElement error = driver.findElement(By.xpath(HomePageProperties.ERR_MSG_CREATE_ACCOUNT_XPATH));
+
+			System.out.println(error.getText());
+
+			System.out.println("An account using this email address has already been registered. Please enter a valid Email or request a new one.");
+			Thread.sleep(2000);
+			driver.quit();
+
+		}
+		catch (NoSuchElementException e) {
+
+		driver.findElement(By.xpath(HomePageProperties.BTN_RADIO_MALE_XPATH)).click();
+		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_FIRST_NAME_XPATH)).sendKeys("Khaled");
+		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_LAST_NAME_XPATH)).sendKeys("Hasan");
+		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_PASSWORD_XPATH)).sendKeys("khaled1234567890");
+
+		Select days = new Select(driver.findElement(By.xpath(HomePageProperties.REGISTRATION_DOB_DAYS_XPATH)));
+		days.selectByIndex(16);
+		Select months = new Select(driver.findElement(By.xpath(HomePageProperties.REGISTRATION_DOB_MONTHS_XPATH)));
+		months.selectByValue("3");
+		Select years = new Select(driver.findElement(By.xpath(HomePageProperties.REGISTRATION_DOB_YEARS_XPATH)));
+		years.selectByValue("1981");
+
+		driver.findElement(By.xpath(HomePageProperties.REGISTRATION_CHECKBOX_NEWSLETTER_XPATH)).click();
+		Thread.sleep(3000);
+
+		Assert.assertTrue(homePage.verifyRegisterSubmitButtonDisplayed());
+		driver.findElement(By.xpath(HomePageProperties.BTN_REGISTER_ACCOUNT_XPATH)).click();
+		Thread.sleep(3000);
+		// Logout Account
+		driver.findElement(By.xpath(HomePageProperties.SIGN_OUT_XPATH)).click();
+		Thread.sleep(3000);
+		}
+	}
+
 
 
 	
 	
-	@AfterMethod
+	@AfterMethod(groups = {"all"})
 	public void tearDown(){
 		driver.quit();
 	}

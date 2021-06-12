@@ -27,7 +27,7 @@ public class SignInPageTest extends TestBase {
         super();
     }
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"all"})
     public void setUp() throws InterruptedException{
         initialization();
         testUtil = new TestUtil();
@@ -37,7 +37,7 @@ public class SignInPageTest extends TestBase {
 
     }
 
-    //@Test(priority = 18)
+    @Test(priority = 18, groups = {"SmokeTest"})
     public void verifyLogin() throws Exception { // 1.3. Registered user should be able to Login from Home Page.
 
         /*String email = "khaledhasanb@gmail.com";
@@ -75,7 +75,7 @@ public class SignInPageTest extends TestBase {
 
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"all"})
     public void close(){
         driver.quit();
     }
