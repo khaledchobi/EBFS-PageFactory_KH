@@ -34,7 +34,7 @@ public class ProductCategoryPageTest extends TestBase {
         super();
     }
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"all"})
     public void setUp() throws InterruptedException{
         initialization();
         testUtil = new TestUtil();
@@ -900,7 +900,7 @@ public class ProductCategoryPageTest extends TestBase {
 
 
 
-    @AfterMethod
+    @AfterMethod(groups = {"all"})
     public void close(){
         driver.quit();
     }

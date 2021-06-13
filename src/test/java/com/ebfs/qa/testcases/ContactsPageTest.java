@@ -36,7 +36,7 @@ public class ContactsPageTest extends TestBase{
 	/**
 	 * @throws InterruptedException
 	 */
-	@BeforeMethod
+	@BeforeMethod(groups = {"all"})
 	public void setUp() throws InterruptedException {
 		
 		initialization();
@@ -46,7 +46,7 @@ public class ContactsPageTest extends TestBase{
 		contactsPage = homePage.clickOnContactsLink();
 	}
 	
-	//@Test(priority=19)
+	@Test(priority = 19, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyContactsPageLabel(){
 		ExtentTestManager.getTest().log(Status.INFO, "Verify Contact Us Page Label");
 		Assert.assertTrue(contactsPage.verifyContactsLabel(), ContactsPageTestProperties.ERROR_MSG);
@@ -60,7 +60,7 @@ public class ContactsPageTest extends TestBase{
 	}
 	
 	
-	@AfterMethod
+	@AfterMethod(groups = {"all"})
 	public void tearDown(){
 		driver.quit();
 	}

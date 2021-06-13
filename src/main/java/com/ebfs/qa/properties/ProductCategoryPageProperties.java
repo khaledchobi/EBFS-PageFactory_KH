@@ -120,7 +120,8 @@ public interface ProductCategoryPageProperties {
 
     public final String SHOPPING_CART_SUMMARY_TITLE_XPATH = ("//h1[@id='cart_title']");
     public final String BTN_PROCEED_TO_CHECKOUT_XPATH = ("//div[@id='center_column']/p[2]/a[1]");
-    public final String BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH = ("//button[@name='processAddress']");
+    public final String BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH = ("//button[@name='submitAddress']");
+    public final String BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH_01 = ("//button[@name='processAddress']");
     public final String CHECKBOX_GIFT_WRAP_OPTION_XPATH = ("//input[@id='gift']");
     public final String TEXTAREA_GIFT_MESSAGE_BOX_XPATH = ("//textarea[@id='gift_message']");
     public final String CHECKBOX_TERMS_OF_SERVICE_XPATH = ("//input[@id='cgv']");
@@ -136,13 +137,16 @@ public interface ProductCategoryPageProperties {
     public final String NUMBER_OF_ITEMS_ADDED_TO_CART_XPATH = ("//span[@class='heading-counter']");
 
     public final String DELETE_ITEM_SHOPPING_CART_TSHIRTS_XPATH = ("//tr[@id='product_1_1_0_0']/td[7]/div/a");
-    public final String DELETE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH = ("//tr[@id='product_3_13_0_175']/td[7]/div/a");
+    public final String DELETE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH = ("//tr[@id='product_3_13_0_0']/td[7]/div/a");
+    public final String DELETE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01 = ("//tr[@id='product_3_13_0_223']/td[7]/div/a");
     public final String INCREASE_ITEM_SHOPPING_CART_TSHIRTS_XPATH = ("//a[@id='cart_quantity_up_1_1_0_0']");
     public final String INCREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_XPATH = ("//a[@id='cart_quantity_up_3_13_0_0']");
     public final String DECREASE_ITEM_SHOPPING_CART_TSHIRTS_XPATH = ("//a[@id='cart_quantity_down_1_1_0_0']");
     public final String DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_XPATH = ("//a[@id='cart_quantity_down_3_13_0_0']");
-    public final String DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH = ("//a[@id='cart_quantity_down_1_1_0_175']");
-    public final String DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH = ("//a[@id='cart_quantity_down_3_13_0_175']");
+    public final String DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH = ("//a[@id='cart_quantity_down_1_1_0_0']");
+    public final String DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01 = ("//a[@id='cart_quantity_down_1_1_0_223']");
+    public final String DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH = ("//a[@id='cart_quantity_down_3_13_0_0']");
+    public final String DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01 = ("//a[@id='cart_quantity_down_3_13_0_223']");
     public final String SHOPPING_CART_TOTAL_COST_XPATH = ("//span[@id='total_price']");
     public final String SHOPPING_CART_SHIPPING_COST_XPATH = ("//td[@id='total_shipping']");
     public final String LNK_SHOPPING_CART_CONTINUE_SHOPPING_XPATH = ("//a[@title='Continue shopping']");

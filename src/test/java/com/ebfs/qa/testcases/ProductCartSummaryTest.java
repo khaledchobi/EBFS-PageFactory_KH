@@ -45,7 +45,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    @Test(priority = 36)
+    @Test(priority = 36, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyNumberOfItemsAddedToCartTest() throws InterruptedException {
         // 3.1. Shopping Cart Summary page should display number of items added to the cart.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Number of items added to cart displayed on the Shopping Cart Summary page");
@@ -175,7 +175,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    @Test(priority = 37)
+    @Test(priority = 37, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyDeleteItemsFromShoppingCartTest() throws InterruptedException {
         // 3.2. User should be able to delete the item.
         ExtentTestManager.getTest().log(Status.INFO, "Verify User able to delete item on the Shopping Cart Summary page");
@@ -299,7 +299,7 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Delete Items from Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DELETE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DELETE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
@@ -312,7 +312,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    @Test(priority = 38)
+    @Test(priority = 38, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyIncreaseDecreaseQuantityOfItemAddedTest() throws InterruptedException {
         // 3.3 User should be able to increase/decrease the quantity of each item added.
         ExtentTestManager.getTest().log(Status.INFO, "Verify increase/decrease the quantity of each item added on the Shopping Cart Summary page");
@@ -460,8 +460,8 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Decrease the quantity of each item added in Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH)).click();
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
@@ -474,7 +474,7 @@ public class ProductCartSummaryTest extends TestBase {
     }
 
 
-    @Test(priority = 39)
+    @Test(priority = 39, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyTotalCostAndShippingCostTest() throws InterruptedException {
         // 3.4. Total Cost and Shipping cost should display.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Total Cost and Shipping cost displayed on the Shopping Cart Summary page");
@@ -635,8 +635,8 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Decrease the quantity of each item added in Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH)).click();
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         // Total Cost Displayed
@@ -653,7 +653,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    @Test(priority = 40)
+    @Test(priority = 40, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyContinueShoppingLinkTest() throws InterruptedException {
         // 3.5. Continue Shopping link should be available for user.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Continue Shopping link available on the Shopping Cart Summary page");
@@ -820,8 +820,8 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Decrease the quantity of each item added in Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH)).click();
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         // Total Cost Displayed
@@ -1057,7 +1057,7 @@ public class ProductCartSummaryTest extends TestBase {
     }
 
 
-    @Test(priority = 42)
+    @Test(priority = 42, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyRegisterUserLogInAfterShoppingTest() throws InterruptedException {
         // 3.7. Registered user should be able to login
         ExtentTestManager.getTest().log(Status.INFO, "Verify Registered user able to login on the Shopping Cart Summary page");
@@ -1243,8 +1243,8 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Decrease the quantity of each item added in Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH)).click();
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         // Total Cost Displayed
@@ -1264,7 +1264,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    @Test(priority = 43)
+    @Test(priority = 43, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyDifferentDeliveryMethodOptionTest() throws InterruptedException {
         // 3.8. Different delivery method option should be available for user to select.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Different delivery method option available for user to select on the Shopping Cart Summary page");
@@ -1276,7 +1276,7 @@ public class ProductCartSummaryTest extends TestBase {
 
     }
 
-    @Test(priority = 44)
+    @Test(priority = 44, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyDifferentPaymentMethodTest() throws InterruptedException {
         // 3.9. Different payment method should be presented to user.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Different payment method presented to user on the Shopping Cart Summary page");
@@ -1462,8 +1462,8 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Decrease the quantity of each item added in Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH)).click();
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         // Total Cost Displayed
@@ -1478,8 +1478,24 @@ public class ProductCartSummaryTest extends TestBase {
         Thread.sleep(2000);
         //Proceed To Checkout Summary To Address
         driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_XPATH)).click();
+
+        /*driver.findElement(By.xpath("//input[@id='address1']")).sendKeys("11, Mary Butler Dr");
+        driver.findElement(By.xpath("//input[@id='city']")).sendKeys("Waterford");
+
+        Select state = new Select(driver.findElement(By.xpath("//select[@id='id_state']")));
+        state.selectByValue("7");
+
+        driver.findElement(By.xpath("//input[@id='postcode']")).sendKeys("06385");
+
+        Select country = new Select(driver.findElement(By.xpath("//select[@id='id_country']")));
+        country.selectByValue("21");
+
+        driver.findElement(By.xpath("//input[@id='phone']")).sendKeys("9293368556");
+
+        driver.findElement(By.xpath("//input[@id='phone_mobile']")).sendKeys("9293368556");*/
+
         //Proceed To Checkout Summary Address To Shipping
-        driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH_01)).click();
 
         //Checkbox of Terms of Service
         driver.findElement(By.xpath(ProductCategoryPageProperties.CHECKBOX_TERMS_OF_SERVICE_XPATH)).click();
@@ -1506,7 +1522,7 @@ public class ProductCartSummaryTest extends TestBase {
     }
 
 
-    @Test(priority = 45)
+    @Test(priority = 45, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyGiftWrapOptionTest() throws InterruptedException {
         // 3.10. Gift wrap option should be available for user.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Gift wrap option available for user on the Shopping Cart Summary page");
@@ -1692,8 +1708,8 @@ public class ProductCartSummaryTest extends TestBase {
         Assert.assertTrue(productCategoryPage.verifyNumberOfItemsAddedToCartDisplayed());
 
         // Decrease the quantity of each item added in Shopping Cart After Sign In
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH)).click();
-        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_TSHIRTS_AFTER_SIGN_IN_XPATH_01)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.DECREASE_ITEM_SHOPPING_CART_PRINTED_DRESS_AFTER_SIGN_IN_XPATH_01)).click();
 
         Thread.sleep(2000);
         // Total Cost Displayed
@@ -1709,7 +1725,7 @@ public class ProductCartSummaryTest extends TestBase {
         //Proceed To Checkout Summary To Address
         driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_XPATH)).click();
         //Proceed To Checkout Summary Address To Shipping
-        driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH_01)).click();
 
         Thread.sleep(2000);
         //Checkbox of Gift wrap option
