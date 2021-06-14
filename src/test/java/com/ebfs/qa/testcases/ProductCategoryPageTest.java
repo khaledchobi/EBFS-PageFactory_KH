@@ -45,7 +45,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 20)
+    @Test(priority = 20, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyNavigateToProductCategoryPageTest() throws InterruptedException {
         // 2.1. User should be able to navigate to one of the product category page by clicking Dresses/T-Shirts.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Product Category Page");
@@ -91,7 +91,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 21)
+    @Test(priority = 21, groups = {"SmokeTest" , "RegressionTest"})
     public void verifySubCategoryLinkTest() throws InterruptedException {
         // 2.2. Sub-Categories link should be presented to the User.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Sub Category Link Page");
@@ -150,7 +150,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 22)
+    @Test(priority = 22, groups = {"SmokeTest" , "RegressionTest"})
     public void verifySortFunctionalityTest() throws InterruptedException {
         // 2.3. Sort Functionality is available for User to sort the products.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Sort Functionality availability Page");
@@ -211,7 +211,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 23)
+    @Test(priority = 23, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyGridOrListViewTest() throws InterruptedException {
         // 2.4. User can change the view of the product list by clicking Grid or List.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Grid or List Functionality availability in Product Page");
@@ -248,7 +248,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 24)
+    @Test(priority = 24, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyNumberOfProductsViewTest() throws InterruptedException {
         // 2.5. Number of products showing should display on the page.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Number of products showing on the Page");
@@ -272,7 +272,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 25)
+    @Test(priority = 25, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyFilterProductsLeftNavigationTest() throws InterruptedException {
         // 2.6. User should be able to filter products from left navigation by Size,Color, Compositions, Style, Properties, Availability, Manufacture and Condition.
         ExtentTestManager.getTest().log(Status.INFO, "Verify filter products from left navigation on the Page");
@@ -346,7 +346,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 26)
+    @Test(priority = 26, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyFilterProductsPriceRangeTest() throws InterruptedException {
         // 2.7. User should be able to filter item using the Price Range bar.
         ExtentTestManager.getTest().log(Status.INFO, "Verify filter products using the Price Range bar on the Page");
@@ -382,7 +382,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 27)
+    @Test(priority = 27, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyDiscoverOurStoresLinkTest() throws InterruptedException {
         // 2.8. User should be able to find the store location by clicking “Discover Our Stores”
         ExtentTestManager.getTest().log(Status.INFO, "Verify to find the store location by clicking “Discover Our Stores” on the Page");
@@ -399,7 +399,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 28)
+    @Test(priority = 28, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyMouseOverProductViewTest() throws InterruptedException {
         // 2.9. Add to Cart or More Button should be visible when user mouse over to product.
         ExtentTestManager.getTest().log(Status.INFO, "Verify mouse over to view Add to Cart or More Button on the Page");
@@ -418,7 +418,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 29)
+    @Test(priority = 29, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyInOrOutOfStockIconViewTest() throws InterruptedException {
         // 2.10. In Stock/Out of Stock icon should display for each item.
         ExtentTestManager.getTest().log(Status.INFO, "Verify In Stock/Out of Stock icon should display for each item on the Page");
@@ -435,7 +435,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 30)
+    @Test(priority = 30, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyMouseOverProductQuickViewTest() throws InterruptedException {
         // 2.11. Quick View link should be visible when user mouse over to product
         ExtentTestManager.getTest().log(Status.INFO, "Verify mouse over to view Quick View link on the Page");
@@ -454,7 +454,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 31)
+    @Test(priority = 31, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyDifferentLinkInformationTest() throws InterruptedException {
         // 2.12. Information with different link is available for User.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Information with different link is available on the Page");
@@ -484,7 +484,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 32)
+    @Test(priority = 32, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyAddMultipleProductToCartTest() throws InterruptedException {
         // 2.13. User should be able to add multiple product to cart from Product Category page.
         ExtentTestManager.getTest().log(Status.INFO, "Verify to add multiple product to cart from Product Category page.");
@@ -552,7 +552,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 33)
+    @Test(priority = 33, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyProductAddedCartUpdatedTest() throws InterruptedException {
         // 2.14. Cart should be updated after product added to cart.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Cart updated after product added to cart on the Page");
@@ -626,7 +626,7 @@ public class ProductCategoryPageTest extends TestBase {
 
         Thread.sleep(3000);
         // Proceed to Checkout Address
-        driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH)).click();
+        driver.findElement(By.xpath(ProductCategoryPageProperties.BTN_PROCEED_TO_CHECKOUT_ADDRESS_XPATH_01)).click();
 
         Thread.sleep(3000);
         // Terms of service Checkbox
@@ -645,7 +645,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 34)
+    @Test(priority = 34, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyProductOverlayCheckOutButtonTest() throws InterruptedException {
         //  2.15. Check out button should be available for user from Product Overlay.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Check out button available for user from Product Overlay on the Page");
@@ -735,7 +735,7 @@ public class ProductCategoryPageTest extends TestBase {
 
     }
 
-    @Test(priority = 35)
+    @Test(priority = 35, groups = {"SmokeTest" , "RegressionTest"})
     public void verifyCheckOutButtonNavigateToShoppingCartTest() throws InterruptedException {
         //  2.16. Check out button should navigate to shopping cart summary page.
         ExtentTestManager.getTest().log(Status.INFO, "Verify Check out button navigate to shopping cart summary page.");
