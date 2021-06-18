@@ -4,6 +4,7 @@ import com.ebfs.qa.properties.HomePageProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -19,6 +20,7 @@ import com.ebfs.qa.util.TestUtil;
 import com.qa.ExtentReportListener.ExtentTestManager;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -101,11 +103,30 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 7, groups = {"SmokeTest" , "RegressionTest"})
-	public void verifyFeatureProductsVisibleTest(){
+	@Test(priority = 7, groups = {"SmokeTest" , "RegressionTest", "BAF"})
+	public void verifyFeatureProductsVisibleTest() throws InterruptedException {
 		// 1.4. Featured Products should be visible to Users
 
 		extentTestManager.getTest().log(Status.INFO, "Verify Featured Products visible to Users in the Home Page");
+
+		List<WebElement> popularProductsName = driver.findElements(By.xpath(HomePageProperties.LIST_POPULAR_PRODUCTS_NAME_XPATH));
+		List<WebElement>  popularProducts = driver.findElements(By.xpath(HomePageProperties.LIST_POPULAR_PRODUCTS_XPATH));
+		if(popularProductsName.size() == 8){
+			System.out.println("PASSED..");
+		}else{
+			System.out.println("Failed..");
+		}
+		for(WebElement element: popularProductsName){
+			System.out.println("Product Name: " + element.getText());
+		}
+		Actions act = new Actions(driver);
+		List<WebElement>  linkQuickView = driver.findElements(By.xpath(HomePageProperties.LNK_QUICK_VIEW_TEXT_XPATH));
+
+		for(int i=0; i< popularProducts.size(); i++){
+			act.moveToElement(popularProducts.get(i)).build().perform();
+			Thread.sleep(2000);
+			System.out.println("Text Name: " + linkQuickView.get(i).getText());
+		}
 
 		Assert.assertTrue(homePage.verifyFeatureProductsDisplayed());
 

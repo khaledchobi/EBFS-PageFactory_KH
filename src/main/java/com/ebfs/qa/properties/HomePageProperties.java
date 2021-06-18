@@ -60,6 +60,10 @@ public interface HomePageProperties {
 	public final String CHECKOUT_CART_XPATH = "//a[@title='View my shopping cart']";
 	public final String CHECKOUT_CART_EMPTY_XPATH = "//span[@class='ajax_cart_no_product']";
 
+	public final String LIST_POPULAR_PRODUCTS_NAME_XPATH = "//ul[@id='homefeatured']/li/div[1]/div[2]/h5/a";
+	public final String LIST_POPULAR_PRODUCTS_XPATH = "//ul[@id='homefeatured']/li";
+	public final String LNK_QUICK_VIEW_TEXT_XPATH = "//ul[@id='homefeatured']/li/div/div/div/a[@class = 'quick-view']/span";
+
 	public final String LNK_QUICK_VIEW_XPATH = "//img[@class='replace-2x img-responsive']";
 	public final String LNK_WISHLIST_XPATH = "//tr[@id='wishlist_34']/td[1]/a";
 	public final String LNK_BEST_SELLER_XPATH = "//a[@class='blockbestsellers']";

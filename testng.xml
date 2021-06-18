@@ -12,8 +12,8 @@
 			<define name = "all">
 				<!--<include name = "SmokeTest"/>-->
 				<!--<include name = "FunctionalTest"/>-->
-				<include name = "RegressionTest"/>
-				<!--<include name = "BAF"/>-->
+				<!--<include name = "RegressionTest"/>-->
+				<include name = "BAF"/>
 				<include name = "ReTest"/>
 			</define>
 			<run>
@@ -21,8 +21,8 @@
 			</run>
 		</groups>
 		<classes>			
-			<!--<class name="com.ebfs.qa.testcases.HomePageTest"></class>
-			<class name="com.ebfs.qa.testcases.ContactsPageTest"></class>-->
+			<class name="com.ebfs.qa.testcases.HomePageTest"></class>
+			<!--<class name="com.ebfs.qa.testcases.ContactsPageTest"></class>-->
 			<class name="com.ebfs.qa.testcases.SignInPageTest"></class>
 			<!--<class name="com.ebfs.qa.testcases.ProductCategoryPageTest"></class>
 			<class name="com.ebfs.qa.testcases.ProductCartSummaryTest"></class>-->

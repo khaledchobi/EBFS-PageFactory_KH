@@ -1,0 +1,40 @@
+\
+  -Dsonar.projectKey=EBFS-PageFactory \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=786d01f241b3f85437a7511ec4dfb1d1becb2efb
+
+
+
+pipeline {
+    agent any
+
+    tools {
+        maven 'apache-maven-3.6.3'
+    }
+
+    stages {
+
+        stage ('Checkout') {
+            steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/khaledchobi/EBFS-PageFactory_KH']]])
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn clean install -f pom.xml'
+            }
+        }
+
+        stage ('Code Quality') {
+            steps {
+                    withSonarQubeEnv('SonarQube') {
+                    sh 'mvn sonar:sonar \
+  -Dsonar.projectKey=EBFS-PageFactory \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=786d01f241b3f85437a7511ec4dfb1d1becb2efb -f pom.xml'
+                }
+            }
+        }
+    }
+}
