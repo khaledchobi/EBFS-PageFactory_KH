@@ -103,7 +103,7 @@ public class HomePageTest extends TestBase {
 
 	}
 
-	@Test(priority = 7, groups = {"SmokeTest" , "RegressionTest", "BAF"})
+	@Test(priority = 7, groups = {"SmokeTest" , "RegressionTest"})
 	public void verifyFeatureProductsVisibleTest() throws InterruptedException {
 		// 1.4. Featured Products should be visible to Users
 
